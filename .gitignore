@@ -1,0 +1,63 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+*.log
+logs/
+scraper_output*.log
+scraper_*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Debug files
+debug_*.html
+nul
+
+# Scraped data (large files)
+fleetpride_products.json
+fleetpride_products.csv
+fleetpride_1000_products.json
+fleetpride_1000_products.csv
+fleetpride_products_transformed.json
+fleetpride_products_transformed_flat.json
+fp_response.json
+**/fp_response.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Claude settings (local only)
+.claude/
+
+# Misc
+coverage/
+*.pem
+*.key
+
+# Corrupted/weird filenames
+C\357\200\272*
+
+# Config with credentials
+config.json

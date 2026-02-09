@@ -1,0 +1,8 @@
+{
+  "short_name": "Ferguson Home",
+  "name": "Build with Ferguson - Home Improvement",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#63666A",
+  "background_color": "#ffffff"
+}

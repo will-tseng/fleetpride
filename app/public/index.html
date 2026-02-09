@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/ico" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#003366">
+  <meta name="description" content="FleetPride - Heavy Duty Parts & Service. Your trusted source for truck, trailer, and fleet maintenance parts.">
+  <title>FleetPride - Heavy Duty Parts & Service</title>
+
+  <!-- Enhanced Error Handling for Lucidworks -->
+  <script>
+    // Global error handling for Lucidworks fetch failures
+    (function () {
+      const originalFetch = window.fetch;
+
+      window.fetch = function (url, options) {
+        return originalFetch.apply(this, arguments)
+          .catch(error => {
+            // Check if this is a Lucidworks signal store error
+            if (url && typeof url === 'string' &&
+              (url.includes('lucidworks.com') || url.includes('signal-store'))) {
+              
+              // Emit a custom event that our React components can listen to
+              window.dispatchEvent(new CustomEvent('lucidworks-fetch-error', {
+                detail: {
+                  url: url,
+                  error: error.message,
+                  type: 'signal-store-failure'
+                }
+              }));
+
+              // Return a resolved promise with mock data to prevent breaking the UI
+              return Promise.resolve(new Response('{}', {
+                status: 200,
+                statusText: 'OK',
+                headers: new Headers({ 'Content-Type': 'application/json' })
+              }));
+            }
+
+            // For non-Lucidworks errors, throw as normal
+            throw error;
+          });
+      };
+
+      // Catch unhandled promise rejections that might be from Lucidworks
+      window.addEventListener('unhandledrejection', function (event) {
+        if (event.reason && event.reason.message &&
+          (event.reason.message.includes('fetch') ||
+            event.reason.message.includes('Failed to fetch'))) {
+
+          // Emit custom event for our error handler
+          window.dispatchEvent(new CustomEvent('lucidworks-unhandled-error', {
+            detail: {
+              error: event.reason.message,
+              type: 'unhandled-promise-rejection'
+            }
+          }));
+
+          // Prevent default error handling
+          event.preventDefault();
+        }
+      });
+
+      // Monitor script loading errors
+      window.addEventListener('error', function (event) {
+        if (event.target && event.target.src &&
+          event.target.src.includes('embeddables.esm.js')) {
+
+          window.dispatchEvent(new CustomEvent('lucidworks-script-error', {
+            detail: {
+              src: event.target.src,
+              type: 'script-load-failure'
+            }
+          }));
+        }
+      });
+    })();
+  </script>
+
+  <!-- Embed Code -->
+  <!-- <script id="lw-ui-lib" type="module" src="https://storage.googleapis.com/sb-ui-dev/EXST-298/v4/embeddables.esm.js"
+    signal-store-api-url="https://b4439ded-aadf-446d-b877-05365ac276dc.applications.lucidworks.com"
+    signal-store-embed-token="mDG3t7W1RCOAskG0xw2gA4guESwGXGb7" beacon="{}"
+    app-studio-api-url="https://a6b9c2c7-06df-4670-9386-095634683869.applications.lucidworks.dev"
+    app-studio-embed-token="lUbAEDX2CdR9CY48QJt4pkoIIWOSUk7g" initiator="AS"></script> -->
+  <script type="module" id="lw-ui-lib"
+    api-url="https://b34c9dc9-b4a1-4da5-992a-33f2dddb155d.applications.lucidworks.com"
+    embed-token="lI18Q4eof6vaLxVgUXPA2kZ4XrMOYbMm" src="https://storage.googleapis.com/sb-ui/springboard.esm.js"
+    beacon="{}"></script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+
+</html>
