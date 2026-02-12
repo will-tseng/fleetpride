@@ -37,6 +37,7 @@ import { logError } from '@utils/errorHandling';
 import Breadcrumb from '../common/Breadcrumb';
 import { useStore } from '@context/StoreContext';
 import { useUser } from '@context/UserContext';
+import { useSelectedVehicle } from '@context/SelectedVehicleContext';
 import ProductTable from '../product/ProductTable';
 
 function useQuery() {
@@ -508,6 +509,7 @@ export default function SearchResults() {
   const abortControllerRef = useRef(null);
   const { getStoreFilterQuery, getInventoryFilterQuery, selectedStore, inStockOnly, toggleInStockOnly } = useStore();
   const { isSignedIn, currentUser } = useUser();
+  const { selectedVehicle: vehicleFilter } = useSelectedVehicle();
 
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -699,8 +701,13 @@ export default function SearchResults() {
       facetFilters.push(userAvailabilityFilter);
     }
 
+    // Add vehicle filter if vehicle is selected
+    if (vehicleFilter) {
+      facetFilters.push(vehicleFilter.filterQuery);
+    }
+
     return facetFilters;
-  }, [selectedFacets, categoryParam, manufacturerParam, storeFilterQuery, inventoryFilterQuery, isSignedIn, userAvailabilityFilter]);
+  }, [selectedFacets, categoryParam, manufacturerParam, storeFilterQuery, inventoryFilterQuery, isSignedIn, userAvailabilityFilter, vehicleFilter]);
 
   // Optimized sort change handler
   const handleSortChange = useCallback((newSortValue) => {
@@ -765,7 +772,7 @@ export default function SearchResults() {
           facetLimit: 50,
           facetMinCount: 1,
           queryProfile: 'default',
-          fields: 'id,name_s,title,title_s,price,price_f,price_display_s,image_url_s,image_url,description,brand_s,brand_t,manufacturer,category_s,category,subcategory_s,sku,sku_s,part_number_s,features_ss,search_text_t',
+          fields: 'id,name_s,title,title_s,price,price_f,price_display_s,image_url_s,image_url,description,brand_s,brand_t,manufacturer,category_s,category,subcategory_s,sku,sku_s,part_number,part_number_s,features_ss,search_text_t,online_shipping_b,chicago_store_b,chicago_inventory_i,sanfran_store_b,sanfran_inventory_i,raleigh_store_b,raleigh_inventory_i',
           sort: sortValue,
           signal
         };
@@ -1102,6 +1109,7 @@ export default function SearchResults() {
                   backgroundColor: 'transparent'
                 }}
               >
+                {/* Facets */}
                 {loading ? (
                   <FacetSidebarSkeleton />
                 ) : (

@@ -58,7 +58,7 @@ const FeaturedProducts = React.memo(() => {
           rows: 8,
           queryProfile: 'landing-page',
           filterQueries: filterQueries,
-          fields: 'id,name_s,title,title_s,price,price_f,image_url_s,image_url,description,brand_s,manufacturer,category_s,category,subcategory_s,sku,sku_s,part_number_s,price_display_s,features_ss'
+          fields: 'id,name_s,title,title_s,price,price_f,image_url_s,image_url,description,brand_s,manufacturer,category_s,category,subcategory_s,sku,sku_s,part_number,part_number_s,price_display_s,features_ss,online_shipping_b,chicago_store_b,chicago_inventory_i,sanfran_store_b,sanfran_inventory_i,raleigh_store_b,raleigh_inventory_i'
         });
         
         if (!mountedRef.current) return;
@@ -76,7 +76,8 @@ const FeaturedProducts = React.memo(() => {
               .filter(doc => doc.image_url)
               .map(doc => ({
                 image_url: doc.image_url,
-                sku: doc.sku || doc.id,
+                part_number: doc.part_number || doc.part_number_s,
+                sku: doc.sku || doc.sku_s || doc.id,
                 title: doc.title,
                 id: doc.id,
                 product_id: doc.product_id,
@@ -103,7 +104,8 @@ const FeaturedProducts = React.memo(() => {
                 .filter(p => p.image_url)
                 .map(p => ({
                   image_url: p.image_url,
-                  sku: p.sku || p.id,
+                  part_number: p.part_number || p.part_number_s,
+                  sku: p.sku || p.sku_s || p.id,
                   title: p.title,
                   id: p.id,
                   product_id: p.product_id,
@@ -117,7 +119,8 @@ const FeaturedProducts = React.memo(() => {
             // Always include the main product as first variant if not already included
             const mainVariant = {
               image_url: product.image_url,
-              sku: product.sku || product.id,
+              part_number: product.part_number || product.part_number_s,
+              sku: product.sku || product.sku_s || product.id,
               title: product.title,
               id: product.id,
               product_id: product.product_id,

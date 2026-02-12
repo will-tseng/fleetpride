@@ -33,31 +33,27 @@ function ProductCard({ product }) {
   const searchParams = new URLSearchParams(location.search);
   const currentQuery = searchParams.get('q') || '*:*';
 
-  // Get inventory count for the selected store (will be called with current variant data)
-  const getInventoryCount = (variantData = null) => {
-    if (!selectedStore || !selectedStore.inventoryField) {
+  // Get inventory count for the selected store
+  const getInventoryCount = () => {
+    if (!selectedStore || !product) {
       return null;
     }
 
-    // If variant data is provided and has the inventory field, use it
-    if (variantData && typeof variantData[selectedStore.inventoryField] === 'number') {
-      return variantData[selectedStore.inventoryField];
+    // For online store, sum all physical store inventories
+    if (selectedStore.id === 'online') {
+      const chicagoInventory = product.chicago_inventory_i || 0;
+      const sanfranInventory = product.sanfran_inventory_i || 0;
+      const raleighInventory = product.raleigh_inventory_i || 0;
+      return chicagoInventory + sanfranInventory + raleighInventory;
     }
 
-    // Fall back to main product inventory
-    if (!product) {
+    // For physical stores, get that store's inventory
+    if (!selectedStore.inventoryField) {
       return null;
     }
+
     const inventory = product[selectedStore.inventoryField];
     return typeof inventory === 'number' ? inventory : null;
-  };
-
-  // Check if online shipping is available (for current variant or main product)
-  const getOnlineShipping = (variantData = null) => {
-    if (variantData && typeof variantData.online_shipping_b === 'boolean') {
-      return variantData.online_shipping_b;
-    }
-    return product?.online_shipping_b === true;
   };
 
   // Guard: If product is undefined or missing id, render fallback UI
@@ -81,6 +77,10 @@ function ProductCard({ product }) {
 
   // Get brand/manufacturer
   const productBrand = product.brand_s || product.brand_t || product.brand || product.manufacturer || product.manufacturer_s || '';
+
+  // Get part numbers - check for both plain and _s suffixed fields
+  const partNumber = product.part_number || product.part_number_s || '';
+  const sku = product.sku || product.sku_s || '';
   
   // Handle variant images - use main image as fallback with all possible image fields
   const mainImage = product.image_url_s || product.image_url || product.image || product.image_url_t || `https://placehold.co/400x${isMobile ? MOBILE_IMAGE_HEIGHT : IMAGE_HEIGHT}/e9e9e9/969696?text=${encodeURIComponent(productTitle)}`;
@@ -434,50 +434,95 @@ function ProductCard({ product }) {
           {productTitle}
         </Typography>
 
+        {/* Part Numbers */}
+        <Box sx={{ mb: 0.5, display: 'flex', flexWrap: 'wrap', gap: 0.5, alignItems: 'center' }}>
+          {partNumber && (
+            <Typography variant="caption" sx={{ fontSize: '0.7rem', color: 'text.secondary' }}>
+              Part #:{' '}
+              <Box component="span" sx={{ fontWeight: 500, fontFamily: 'monospace', color: 'text.primary' }}>
+                {partNumber}
+              </Box>
+            </Typography>
+          )}
+          {sku && (
+            <>
+              {partNumber && (
+                <Box component="span" sx={{ color: 'text.secondary', fontSize: '0.65rem' }}>
+                  •
+                </Box>
+              )}
+              <Typography variant="caption" sx={{ fontSize: '0.7rem', color: 'text.secondary' }}>
+                MPN:{' '}
+                <Box component="span" sx={{ fontWeight: 500, fontFamily: 'monospace', color: 'text.primary' }}>
+                  {sku}
+                </Box>
+              </Typography>
+            </>
+          )}
+        </Box>
+
         {/* Inventory & Delivery Info */}
         <Box sx={{ mb: 0.5 }}>
-          {/* Store Pickup Info */}
-          {selectedStore && selectedStore.id !== 'online' && (
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mb: 0.25 }}>
-              <StorefrontIcon sx={{ fontSize: '0.85rem', color: 'text.secondary' }} />
-              <Typography variant="caption" sx={{ fontSize: '0.7rem', color: 'text.secondary' }}>
-                <strong>Pickup:</strong>{' '}
-                {(() => {
-                  // Get variant data for currently selected image
-                  const currentVariantData = product.variant_data?.[selectedImageIndex];
-                  const inventory = getInventoryCount(currentVariantData);
-                  if (inventory === null) {
-                    return <span style={{ color: '#666' }}>Check availability</span>;
-                  } else if (inventory > 0) {
-                    return (
+          {selectedStore && selectedStore.id === 'online' && (() => {
+            const totalInventory = getInventoryCount();
+            if (totalInventory > 0) {
+              return (
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                  <LocalShippingIcon sx={{ fontSize: '0.85rem', color: 'text.secondary' }} />
+                  <Typography variant="caption" sx={{ fontSize: '0.7rem', color: 'text.secondary' }}>
+                    <strong>Delivery:</strong>{' '}
+                    <span style={{ color: '#2e7d32' }}>
+                      {totalInventory} available for shipping
+                    </span>
+                  </Typography>
+                </Box>
+              );
+            }
+            return null;
+          })()}
+
+          {selectedStore && selectedStore.id !== 'online' && (() => {
+            // Check if product is available at this store
+            const isAvailable = product[selectedStore.filterField] === true;
+            const inventory = getInventoryCount();
+
+            // Calculate total inventory across all stores for delivery
+            const totalInventory = (product.chicago_inventory_i || 0) +
+                                 (product.sanfran_inventory_i || 0) +
+                                 (product.raleigh_inventory_i || 0);
+
+            return (
+              <>
+                {/* Pickup line - always show */}
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mb: 0.25 }}>
+                  <StorefrontIcon sx={{ fontSize: '0.85rem', color: 'text.secondary' }} />
+                  <Typography variant="caption" sx={{ fontSize: '0.7rem', color: 'text.secondary' }}>
+                    <strong>Pickup:</strong>{' '}
+                    {isAvailable && inventory > 0 ? (
                       <span style={{ color: '#2e7d32' }}>
                         {inventory} in stock at {selectedStore.label}
                       </span>
-                    );
-                  } else {
-                    return <span style={{ color: '#d32f2f' }}>Out of stock at {selectedStore.label}</span>;
-                  }
-                })()}
-              </Typography>
-            </Box>
-          )}
+                    ) : (
+                      <span style={{ color: '#d32f2f' }}>
+                        Out of stock at {selectedStore.label}
+                      </span>
+                    )}
+                  </Typography>
+                </Box>
 
-          {/* Delivery Info */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-            <LocalShippingIcon sx={{ fontSize: '0.85rem', color: 'text.secondary' }} />
-            <Typography variant="caption" sx={{ fontSize: '0.7rem', color: 'text.secondary' }}>
-              <strong>Delivery:</strong>{' '}
-              {(() => {
-                const currentVariantData = product.variant_data?.[selectedImageIndex];
-                const hasShipping = getOnlineShipping(currentVariantData);
-                return hasShipping ? (
-                  <span style={{ color: '#2e7d32' }}>Available</span>
-                ) : (
-                  <span style={{ color: '#d32f2f' }}>Unavailable</span>
-                );
-              })()}
-            </Typography>
-          </Box>
+                {/* Delivery line - show if total inventory > 0 */}
+                {totalInventory > 0 && (
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                    <LocalShippingIcon sx={{ fontSize: '0.85rem', color: 'text.secondary' }} />
+                    <Typography variant="caption" sx={{ fontSize: '0.7rem', color: 'text.secondary' }}>
+                      <strong>Delivery:</strong>{' '}
+                      <span style={{ color: '#2e7d32' }}>Available</span>
+                    </Typography>
+                  </Box>
+                )}
+              </>
+            );
+          })()}
         </Box>
 
         {/* Price Section */}

@@ -17,10 +17,11 @@ export default function ProductSpecifications({ product }) {
 
   // Core specifications
   const coreSpecs = [
-    { label: 'SKU', value: product.sku, priority: 1 },
-    { label: 'Brand', value: product.manufacturer, priority: 2 },
-    { label: 'Category', value: product.category, priority: 3 },
-    { label: 'Price', value: formattedPrice, priority: 4 },
+    { label: 'Part Number', value: product.part_number, priority: 1 },
+    { label: 'MPN', value: product.sku, priority: 2 },
+    { label: 'Brand', value: product.manufacturer, priority: 3 },
+    { label: 'Category', value: product.category, priority: 4 },
+    { label: 'Price', value: formattedPrice, priority: 5 },
   ];
 
   // Additional common fields
@@ -73,7 +74,7 @@ export default function ProductSpecifications({ product }) {
               variant='body2'
               sx={{
                 fontFamily:
-                  item.label === 'SKU' || item.label === 'Model Number' ? 'monospace' : 'inherit',
+                  item.label === 'Part Number' || item.label === 'MPN' || item.label === 'Model Number' ? 'monospace' : 'inherit',
                 fontSize: '0.875rem',
                 fontWeight: 500,
                 color: 'text.primary',

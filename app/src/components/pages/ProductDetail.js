@@ -57,7 +57,7 @@ const useProduct = (id) => {
           { query: `product_id:"${id}"`, queryProfile: 'default' }
         ];
 
-        const fields = 'id,title,price,price_d,price_f,sale_price,image_url_s,image_url,image,image_url_t,image_urls,images,description,manufacturer,category,sku,variant_images,variants,total_variants,group,group_s,unique_id,product_id,primary_color_s,weight,status,rating,reviews_count,stock_quantity,dimensions,material,color,finish,care_instructions,warranty,upc,model_number,attribute_*,online_shipping_b,chicago_inventory_i,sanfran_inventory_i,raleigh_inventory_i,chicago_store_b,sanfran_store_b,raleigh_store_b,ady_acustomer_b,ady_aprice_d,ady_customerb_b,ady_bprice_d,ady_customerc_b,ady_cprice_d,ady_customerd_b,ady_dprice_d';
+        const fields = 'id,title,price,price_d,price_f,sale_price,image_url_s,image_url,image,image_url_t,image_urls,images,description,manufacturer,category,sku,sku_s,part_number,part_number_s,variant_images,variants,total_variants,unique_id,product_id,primary_color_s,weight,status,rating,reviews_count,stock_quantity,dimensions,material,color,finish,care_instructions,warranty,upc,model_number,attribute_*,online_shipping_b,chicago_inventory_i,sanfran_inventory_i,raleigh_inventory_i,chicago_store_b,sanfran_store_b,raleigh_store_b,ady_acustomer_b,ady_aprice_d,ady_customerb_b,ady_bprice_d,ady_customerc_b,ady_cprice_d,ady_customerd_b,ady_dprice_d';
         
         let productData = null;
         let result = null;
@@ -66,13 +66,9 @@ const useProduct = (id) => {
           result = await search({
             ...config,
             rows: 1,
-            collapse: true,
-            collapseField: 'group',
-            expand: true,
-            expandField: 'image_url',
             fields
           });
-          
+
           if (result.success && result.documents?.length > 0) {
             productData = result.documents[0];
             break;
@@ -83,54 +79,17 @@ const useProduct = (id) => {
           throw new Error('Product not found');
         }
 
-        // Fetch variants using the group field with filter query and expand
-        // This ensures we get all variants that share the same group value
+        // FleetPride products don't use product grouping/variants
+        // Each product is standalone, so we just use the main product data
         let variantData = [];
-
-        if (productData.group) {
-          const variantResult = await search({
-            query: '*:*',
-            rows: 1,
-            queryProfile: 'default',
-            filterQueries: [`group:"${productData.group}"`],
-            collapse: true,
-            collapseField: 'group',
-            expand: true,
-            expandField: 'image_url',
-            fields
-          });
-
-          if (variantResult.success) {
-            // Get variants from the expanded section
-            const expanded = variantResult.data?.expanded || {};
-            const expandedDocs = expanded[productData.group]?.docs || [];
-
-            // The collapsed parent document is in the main results, not in expanded
-            // We need to include it to have the complete variant list
-            const collapsedParent = variantResult.documents?.[0];
-
-            // Combine: collapsed parent + expanded docs (avoiding duplicates)
-            if (collapsedParent) {
-              const allDocs = [collapsedParent, ...expandedDocs];
-              // Remove duplicates by id
-              const seenIds = new Set();
-              variantData = allDocs.filter(doc => {
-                if (seenIds.has(doc.id)) return false;
-                seenIds.add(doc.id);
-                return true;
-              });
-            } else {
-              variantData = expandedDocs;
-            }
-          }
-        }
 
         // Process variant data
         const processedVariants = variantData
-          .filter(doc => doc.image_url)
+          .filter(doc => doc.image_url_s || doc.image_url || doc.image || doc.image_url_t)
           .map(doc => ({
-            image_url: doc.image_url,
-            sku: doc.sku || doc.id,
+            image_url: doc.image_url_s || doc.image_url || doc.image || doc.image_url_t,
+            part_number: doc.part_number || doc.part_number_s,
+            sku: doc.sku || doc.sku_s || doc.id,
             title: doc.title,
             id: doc.id,
             product_id: doc.product_id,
@@ -152,8 +111,9 @@ const useProduct = (id) => {
           }));
 
         const mainVariant = {
-          image_url: productData.image_url,
-          sku: productData.sku || productData.id,
+          image_url: productData.image_url_s || productData.image_url || productData.image || productData.image_url_t,
+          part_number: productData.part_number || productData.part_number_s,
+          sku: productData.sku || productData.sku_s || productData.id,
           title: productData.title,
           id: productData.id,
           product_id: productData.product_id,
@@ -538,6 +498,7 @@ export default function ProductDetail() {
         productToAdd = {
           ...product,
           id: selectedVariant.id || product.id,
+          part_number: selectedVariant.part_number || product.part_number,
           sku: selectedVariant.sku,
           title: selectedVariant.title || product.title,
           image_url: selectedVariant.image_url,
@@ -634,15 +595,33 @@ export default function ProductDetail() {
                 {product.title}
               </Typography>
 
-              {/* SKU - updates based on selected variant */}
+              {/* Part Numbers - updates based on selected variant */}
               {(() => {
                 const selectedVariant = product.variant_data?.[selectedImage];
-                const displaySku = selectedVariant?.sku || product.sku || product.id;
-                return displaySku ? (
-                  <Typography variant='body2' sx={{ color: 'text.secondary', mb: 1.5, fontSize: '0.85rem' }}>
-                    SKU: {displaySku}
-                  </Typography>
-                ) : null;
+                const partNumber = product.part_number || product.part_number_s || '';
+                const sku = selectedVariant?.sku || product.sku || product.sku_s || '';
+
+                if (!partNumber && !sku) return null;
+
+                return (
+                  <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mb: 1.5 }}>
+                    {partNumber && (
+                      <Typography variant='body2' sx={{ color: 'text.secondary', fontSize: '0.85rem' }}>
+                        Part #: <Box component="span" sx={{ fontFamily: 'monospace', fontWeight: 500 }}>{partNumber}</Box>
+                      </Typography>
+                    )}
+                    {sku && (
+                      <>
+                        {partNumber && (
+                          <Box component="span" sx={{ color: 'text.secondary', fontSize: '0.75rem' }}>•</Box>
+                        )}
+                        <Typography variant='body2' sx={{ color: 'text.secondary', fontSize: '0.85rem' }}>
+                          MPN: <Box component="span" sx={{ fontFamily: 'monospace', fontWeight: 500 }}>{sku}</Box>
+                        </Typography>
+                      </>
+                    )}
+                  </Box>
+                );
               })()}
 
               {/* Rating */}
@@ -847,15 +826,20 @@ export default function ProductDetail() {
                   </Box>
 
                   {/* Quick Specs */}
-                  {(product.sku || product.weight || product.dimensions) && (
+                  {(product.part_number || product.sku || product.weight || product.dimensions) && (
                     <Box sx={{ p: 1.5, bgcolor: 'grey.50', borderRadius: 1, mt: 2 }}>
                       <Typography variant='caption' sx={{ fontWeight: 600, color: 'text.secondary', mb: 1, display: 'block' }}>
                         QUICK SPECS
                       </Typography>
                       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-                        {product.sku && (
+                        {(product.part_number || product.part_number_s) && (
                           <Typography variant='body2' sx={{ fontSize: '0.8rem' }}>
-                            <strong>SKU:</strong> {product.sku}
+                            <strong>Part #:</strong> <Box component="span" sx={{ fontFamily: 'monospace' }}>{product.part_number || product.part_number_s}</Box>
+                          </Typography>
+                        )}
+                        {(product.sku || product.sku_s) && (
+                          <Typography variant='body2' sx={{ fontSize: '0.8rem' }}>
+                            <strong>MPN:</strong> <Box component="span" sx={{ fontFamily: 'monospace' }}>{product.sku || product.sku_s}</Box>
                           </Typography>
                         )}
                         {product.weight && (

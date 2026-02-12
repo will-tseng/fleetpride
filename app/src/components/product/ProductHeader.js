@@ -87,7 +87,7 @@ export default function ProductHeader({ product, rating, reviewCount }) {
         </Typography>
       )}
 
-      {/* Rating and SKU bar */}
+      {/* Rating and Part Numbers bar */}
       <Box
         sx={{
           display: 'flex',
@@ -105,7 +105,7 @@ export default function ProductHeader({ product, rating, reviewCount }) {
             sx={{ color: '#FFA41C', mr: 1 }}
           />
         )}
-        
+
         {reviewCount && (
           <Link
             to="#reviews"
@@ -119,7 +119,26 @@ export default function ProductHeader({ product, rating, reviewCount }) {
             {reviewCount} ratings
           </Link>
         )}
-        
+
+        {product.part_number && (
+          <Typography
+            variant="body2"
+            sx={{
+              color: 'text.secondary',
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <Box component="span" sx={{ mx: 1, fontSize: '0.6rem' }}>
+              |
+            </Box>
+            Part #:{' '}
+            <Box component="span" sx={{ fontWeight: 500, ml: 0.5 }}>
+              {product.part_number}
+            </Box>
+          </Typography>
+        )}
+
         {product.sku && (
           <Typography
             variant="body2"
@@ -132,7 +151,7 @@ export default function ProductHeader({ product, rating, reviewCount }) {
             <Box component="span" sx={{ mx: 1, fontSize: '0.6rem' }}>
               |
             </Box>
-            SKU:{' '}
+            MPN:{' '}
             <Box component="span" sx={{ fontWeight: 500, ml: 0.5 }}>
               {product.sku}
             </Box>
