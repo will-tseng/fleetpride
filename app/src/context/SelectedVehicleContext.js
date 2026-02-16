@@ -1,43 +1,40 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
-const SelectedVehicleContext = createContext(null);
+const SelectedVehicleContext = createContext();
 
-export const SelectedVehicleProvider = ({ children }) => {
-  const [selectedVehicle, setSelectedVehicle] = useState(null);
+export function SelectedVehicleProvider({ children }) {
+  const [selectedVehicle, setSelectedVehicle] = useState(() => {
+    // Load from localStorage on init
+    const saved = localStorage.getItem('fleetpride_selected_vehicle');
+    return saved ? JSON.parse(saved) : null;
+  });
 
-  const selectVehicle = useCallback((vehicle) => {
-    if (vehicle) {
-      // Vehicle object should have: id, label, filterQuery
-      setSelectedVehicle(vehicle);
+  // Save to localStorage whenever it changes
+  useEffect(() => {
+    if (selectedVehicle) {
+      localStorage.setItem('fleetpride_selected_vehicle', JSON.stringify(selectedVehicle));
     } else {
-      setSelectedVehicle(null);
+      localStorage.removeItem('fleetpride_selected_vehicle');
     }
-  }, []);
+  }, [selectedVehicle]);
 
-  const clearVehicle = useCallback(() => {
+  const clearVehicle = () => {
     setSelectedVehicle(null);
-  }, []);
-
-  const value = {
-    selectedVehicle,
-    selectVehicle,
-    clearVehicle,
   };
 
   return (
-    <SelectedVehicleContext.Provider value={value}>
+    <SelectedVehicleContext.Provider value={{ selectedVehicle, setSelectedVehicle, clearVehicle }}>
       {children}
     </SelectedVehicleContext.Provider>
   );
-};
+}
 
-export const useSelectedVehicle = () => {
+export function useSelectedVehicle() {
   const context = useContext(SelectedVehicleContext);
-  if (!context) {
-    // Return a default object if context is not available (allows for optional usage)
-    return { selectedVehicle: null, selectVehicle: () => {}, clearVehicle: () => {} };
+  if (context === undefined) {
+    throw new Error('useSelectedVehicle must be used within a SelectedVehicleProvider');
   }
   return context;
-};
+}
 
 export default SelectedVehicleContext;

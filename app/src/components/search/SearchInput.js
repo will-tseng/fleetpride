@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper, InputBase, IconButton, CircularProgress } from '@mui/material';
+import { Paper, InputBase, IconButton, CircularProgress, Box } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 /**
@@ -16,16 +16,17 @@ const SearchInput = ({
   loading = false,
   customStyles = {},
   showLoadingIndicator = true,
-  buttonColor = 'default'
+  buttonColor = 'default',
+  startAdornment = null
 }) => {
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (value?.trim() && onSubmit) {
       onSubmit(value);
     }
   };
-  
+
   return (
     <Paper
       component="form"
@@ -40,6 +41,11 @@ const SearchInput = ({
       }}
       onSubmit={handleSubmit}
     >
+      {startAdornment && (
+        <Box sx={{ display: 'flex', alignItems: 'center', ml: 0.5 }}>
+          {startAdornment}
+        </Box>
+      )}
       <InputBase
         sx={{
           ml: 1,

@@ -16,6 +16,8 @@ import ErrorPage from '@components/error/ErrorPage';
 import { FaqProvider } from '@context/FaqContext';
 import { StoreProvider } from '@context/StoreContext';
 import { UserProvider } from '@context/UserContext';
+import { VehicleProvider } from '@context/VehicleContext';
+import { SelectedVehicleProvider } from '@context/SelectedVehicleContext';
 import { logError } from '@utils/errorHandling';
 
 function App() {
@@ -103,94 +105,98 @@ function App() {
       >
         <UserProvider>
           <StoreProvider>
-            <FaqProvider>
-              <Header />
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <ErrorBoundary
-                      componentName="HomePage"
-                      onError={(error, info) =>
-                        logError(error, {
-                          componentName: 'HomePage',
-                          componentStack: info?.componentStack,
-                        })
-                      }
-                    >
-                      <>
-                        {/* Hero Section */}
-                        <Hero />
-
-                        {/* Featured Products Section */}
+            <VehicleProvider>
+              <SelectedVehicleProvider>
+                <FaqProvider>
+                  <Header />
+                  <Routes>
+                    <Route
+                      path="/"
+                      element={
                         <ErrorBoundary
-                          componentName="FeaturedProducts"
+                          componentName="HomePage"
                           onError={(error, info) =>
                             logError(error, {
-                              componentName: 'FeaturedProducts',
+                              componentName: 'HomePage',
                               componentStack: info?.componentStack,
                             })
                           }
                         >
-                          <React.Suspense fallback={<CircularProgress />}>
-                            <FeaturedProducts />
-                          </React.Suspense>
+                          <>
+                            {/* Hero Section */}
+                            <Hero />
+
+                            {/* Featured Products Section */}
+                            <ErrorBoundary
+                              componentName="FeaturedProducts"
+                              onError={(error, info) =>
+                                logError(error, {
+                                  componentName: 'FeaturedProducts',
+                                  componentStack: info?.componentStack,
+                                })
+                              }
+                            >
+                              <React.Suspense fallback={<CircularProgress />}>
+                                <FeaturedProducts />
+                              </React.Suspense>
+                            </ErrorBoundary>
+                            <Footer />
+                          </>
                         </ErrorBoundary>
-                        <Footer />
-                      </>
-                    </ErrorBoundary>
-                  }
-                />
-                <Route
-                  path="/product/:id"
-                  element={
-                    <ErrorBoundary
-                      componentName="ProductDetail"
-                      onError={(error, info) =>
-                        logError(error, {
-                          componentName: 'ProductDetail',
-                          componentStack: info?.componentStack,
-                        })
                       }
-                    >
-                      <ProductDetail />
-                    </ErrorBoundary>
-                  }
-                />
-                <Route
-                  path="/search"
-                  element={
-                    <ErrorBoundary
-                      componentName="SearchResults"
-                      onError={(error, info) =>
-                        logError(error, {
-                          componentName: 'SearchResults',
-                          componentStack: info?.componentStack,
-                        })
+                    />
+                    <Route
+                      path="/product/:id"
+                      element={
+                        <ErrorBoundary
+                          componentName="ProductDetail"
+                          onError={(error, info) =>
+                            logError(error, {
+                              componentName: 'ProductDetail',
+                              componentStack: info?.componentStack,
+                            })
+                          }
+                        >
+                          <ProductDetail />
+                        </ErrorBoundary>
                       }
-                    >
-                      <SearchResults />
-                    </ErrorBoundary>
-                  }
-                />
-                <Route
-                  path="/checkout/cart"
-                  element={
-                    <ErrorBoundary
-                      componentName="Cart"
-                      onError={(error, info) =>
-                        logError(error, {
-                          componentName: 'Cart',
-                          componentStack: info?.componentStack,
-                        })
+                    />
+                    <Route
+                      path="/search"
+                      element={
+                        <ErrorBoundary
+                          componentName="SearchResults"
+                          onError={(error, info) =>
+                            logError(error, {
+                              componentName: 'SearchResults',
+                              componentStack: info?.componentStack,
+                            })
+                          }
+                        >
+                          <SearchResults />
+                        </ErrorBoundary>
                       }
-                    >
-                      <Cart />
-                    </ErrorBoundary>
-                  }
-                />
-              </Routes>
-            </FaqProvider>
+                    />
+                    <Route
+                      path="/checkout/cart"
+                      element={
+                        <ErrorBoundary
+                          componentName="Cart"
+                          onError={(error, info) =>
+                            logError(error, {
+                              componentName: 'Cart',
+                              componentStack: info?.componentStack,
+                            })
+                          }
+                        >
+                          <Cart />
+                        </ErrorBoundary>
+                      }
+                    />
+                  </Routes>
+                </FaqProvider>
+              </SelectedVehicleProvider>
+            </VehicleProvider>
           </StoreProvider>
         </UserProvider>
       </ErrorBoundary>

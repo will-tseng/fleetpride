@@ -3,7 +3,7 @@ import {
   AppBar, Box, Toolbar, IconButton, Typography, Container,
   Button, Divider, Link as MuiLink, Badge, List, ListItem,
   ListItemText, ListItemIcon, Drawer, Tooltip, useTheme,
-  LinearProgress
+  LinearProgress, Popover
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -12,14 +12,18 @@ import ChatIcon from '@mui/icons-material/Chat';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import CloseIcon from '@mui/icons-material/Close';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Logo from './Logo';
 import StoreSelector from './StoreSelector';
 import AccountSelector from './AccountSelector';
+import VehicleSelectorEnhanced from '../search/VehicleSelectorEnhanced';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { loadCart } from '@utils/cartUtils';
 import { getTypeaheadSuggestions } from '@api/search';
 import { useFaq } from '@context/FaqContext';
 import { useUser } from '@context/UserContext';
+import { useSelectedVehicle } from '@context/SelectedVehicleContext';
 import { isDebugEnabled, toggleConsoleLogs } from '@utils/logger';
 import SearchInput from '../search/SearchInput';
 import SearchSuggestions from '../search/SearchSuggestions';
@@ -45,7 +49,8 @@ const Header = () => {
   const location = useLocation();
   const { toggleFaqVisibility } = useFaq();
   const { isSignedIn } = useUser();
-  
+  const { selectedVehicle, setSelectedVehicle, clearVehicle } = useSelectedVehicle();
+
   // Simplified state
   const [cartItems, setCartItems] = useState([]);
   const [searchValue, setSearchValue] = useState('');
@@ -57,6 +62,7 @@ const Header = () => {
   const [lastApiCall, setLastApiCall] = useState(null);
   const [logMessages, setLogMessages] = useState([]);
   const [consoleLogsEnabled, setConsoleLogsEnabled] = useState(isDebugEnabled());
+  const [vehicleSelectorAnchor, setVehicleSelectorAnchor] = useState(null);
   
   // Refs
   const debounceTimeoutRef = useRef(null);
@@ -171,38 +177,96 @@ const Header = () => {
   // Handle suggestion selection
   const handleSuggestionSelect = (item, device) => {
     if (!item?.id) return;
-    
+
     logEvents.suggestion(item, device);
     navigate(`/product/${item.id}`);
     setShowSuggestions(false);
   };
 
+  // Vehicle selector handlers
+  const handleVehicleSelectorOpen = (event) => {
+    setVehicleSelectorAnchor(event.currentTarget);
+  };
+
+  const handleVehicleSelectorClose = () => {
+    setVehicleSelectorAnchor(null);
+  };
+
+  const handleVehicleSelected = (vehicle) => {
+    setSelectedVehicle(vehicle);
+    setVehicleSelectorAnchor(null);
+    // Navigate to search page with vehicle filter
+    const params = new URLSearchParams(location.search);
+    navigate(`/search?q=${params.get('q') || '*:*'}`);
+  };
+
+  const handleClearVehicle = () => {
+    clearVehicle();
+  };
+
   const cartItemCount = cartItems.reduce((total, item) => total + (item.quantity || 1), 0);
 
-  const renderSearchInput = (device, customStyles, additionalProps = {}) => (
-    <SearchInput
-      value={searchValue}
-      onChange={(e) => handleSearchChange(e.target.value, device)}
-      onSubmit={() => {
-        if (searchValue.trim()) {
-          handleSearchSubmit(searchValue, device, 'click');
+  const renderSearchInput = (device, customStyles, additionalProps = {}) => {
+    // Vehicle selector adornment for desktop only
+    const vehicleAdornment = device === 'desktop' ? (
+      <Button
+        onClick={handleVehicleSelectorOpen}
+        startIcon={<DirectionsCarIcon sx={{ fontSize: 18 }} />}
+        endIcon={<KeyboardArrowDownIcon sx={{ fontSize: 18 }} />}
+        sx={{
+          minWidth: 150,
+          height: 36,
+          bgcolor: 'transparent',
+          border: '1px solid #d0d0d0',
+          borderRadius: 1,
+          color: selectedVehicle ? '#003366' : '#666',
+          textTransform: 'none',
+          fontWeight: selectedVehicle ? 600 : 400,
+          fontSize: '0.85rem',
+          px: 1.5,
+          '&:hover': {
+            bgcolor: '#f5f5f5',
+            borderColor: '#003366',
+          },
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          mr: 1
+        }}
+      >
+        {selectedVehicle
+          ? `${selectedVehicle.year} ${selectedVehicle.make}`
+          : 'Vehicle'
         }
-      }}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' && searchValue.trim()) {
-          e.preventDefault();
-          handleSearchSubmit(searchValue, device, 'keyboard-enter');
-        } else if (e.key === 'Escape') {
-          e.target.blur();
-          setShowSuggestions(false);
-        }
-      }}
-      placeholder="What are you shopping for?"
-      loading={loading}
-      customStyles={customStyles}
-      {...additionalProps}
-    />
-  );
+      </Button>
+    ) : null;
+
+    return (
+      <SearchInput
+        value={searchValue}
+        onChange={(e) => handleSearchChange(e.target.value, device)}
+        onSubmit={() => {
+          if (searchValue.trim()) {
+            handleSearchSubmit(searchValue, device, 'click');
+          }
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && searchValue.trim()) {
+            e.preventDefault();
+            handleSearchSubmit(searchValue, device, 'keyboard-enter');
+          } else if (e.key === 'Escape') {
+            e.target.blur();
+            setShowSuggestions(false);
+          }
+        }}
+        placeholder="What are you shopping for?"
+        loading={loading}
+        customStyles={customStyles}
+        startAdornment={vehicleAdornment}
+        {...additionalProps}
+      />
+    );
+  };
 
   const renderSearchSuggestions = (device, additionalProps = {}) => (
     <SearchSuggestions
@@ -298,15 +362,13 @@ const Header = () => {
               </Box>
             )}
 
-            {/* Desktop search */}
-            <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', ml: 0, mr: 4 }}>
-              <Box 
-                ref={searchContainerRef}
-                sx={{ width: '100%', maxWidth: '100%', position: 'relative' }}
-              >
-                {renderSearchInput('desktop', searchInputStyles.desktop.paper)}
-                {renderSearchSuggestions('desktop')}
-              </Box>
+            {/* Desktop search with integrated vehicle selector */}
+            <Box
+              ref={searchContainerRef}
+              sx={{ flex: 1, display: 'flex', alignItems: 'center', ml: 0, mr: 4, position: 'relative' }}
+            >
+              {renderSearchInput('desktop', searchInputStyles.desktop.paper)}
+              {renderSearchSuggestions('desktop')}
             </Box>
             
             {/* Account and Cart */}
@@ -585,9 +647,9 @@ const Header = () => {
         )}
       </AppBar>
 
-      <DebugDrawer 
-        open={debugDrawerOpen} 
-        onClose={() => setDebugDrawerOpen(false)} 
+      <DebugDrawer
+        open={debugDrawerOpen}
+        onClose={() => setDebugDrawerOpen(false)}
         lastApiCall={lastApiCall}
         logMessages={logMessages}
         consoleLogsEnabled={consoleLogsEnabled}
@@ -600,6 +662,40 @@ const Header = () => {
           setLogMessages([]);
         }}
       />
+
+      {/* Vehicle Selector Popover */}
+      <Popover
+        open={Boolean(vehicleSelectorAnchor)}
+        anchorEl={vehicleSelectorAnchor}
+        onClose={handleVehicleSelectorClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        PaperProps={{
+          sx: {
+            mt: 1,
+            p: 3,
+            width: 500,
+            maxWidth: '90vw',
+            borderRadius: 2,
+            boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+          }
+        }}
+      >
+        <Typography variant="h6" sx={{ fontWeight: 700, mb: 2, fontSize: '1.25rem' }}>
+          Shop by Vehicle
+        </Typography>
+        <VehicleSelectorEnhanced
+          onVehicleSelected={handleVehicleSelected}
+          onClear={handleClearVehicle}
+          selectedVehicle={selectedVehicle}
+        />
+      </Popover>
     </Box>
   );
 };
