@@ -1,0 +1,2092 @@
+{
+  "_comment": "Complete vehicle reference data generated from FleetPride brake drum products",
+  "_description": "Use this for UI vehicle selector dropdowns",
+  "_generated_at": "2026-02-10T19:19:38.002Z",
+  "_stats": {
+    "total_products": 810,
+    "total_fitments": 64727,
+    "unique_vehicles": 155
+  },
+  "vehicles": {
+    "2015": {
+      "Kenworth": {
+        "T880": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2015|Kenworth|T880|Cummins X15",
+              "display": "2015 Kenworth T880 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2015|Kenworth|T880|PACCAR MX-13",
+              "display": "2015 Kenworth T880 PACCAR MX-13"
+            }
+          }
+        },
+        "T680": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2015|Kenworth|T680|Cummins X15",
+              "display": "2015 Kenworth T680 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2015|Kenworth|T680|PACCAR MX-11",
+              "display": "2015 Kenworth T680 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2015|Kenworth|T680|PACCAR MX-13",
+              "display": "2015 Kenworth T680 PACCAR MX-13"
+            }
+          }
+        },
+        "W900": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2015|Kenworth|W900|Cummins X15",
+              "display": "2015 Kenworth W900 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2015|Kenworth|W900|PACCAR MX-13",
+              "display": "2015 Kenworth W900 PACCAR MX-13"
+            }
+          }
+        },
+        "T270": {
+          "engines": {
+            "PACCAR PX-7": {
+              "key": "2015|Kenworth|T270|PACCAR PX-7",
+              "display": "2015 Kenworth T270 PACCAR PX-7"
+            }
+          }
+        }
+      },
+      "Peterbilt": {
+        "220": {
+          "engines": {
+            "PACCAR PX-7": {
+              "key": "2015|Peterbilt|220|PACCAR PX-7",
+              "display": "2015 Peterbilt 220 PACCAR PX-7"
+            }
+          }
+        },
+        "389": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2015|Peterbilt|389|Cummins X15",
+              "display": "2015 Peterbilt 389 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2015|Peterbilt|389|PACCAR MX-13",
+              "display": "2015 Peterbilt 389 PACCAR MX-13"
+            }
+          }
+        },
+        "567": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2015|Peterbilt|567|Cummins X15",
+              "display": "2015 Peterbilt 567 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2015|Peterbilt|567|PACCAR MX-13",
+              "display": "2015 Peterbilt 567 PACCAR MX-13"
+            }
+          }
+        },
+        "579": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2015|Peterbilt|579|Cummins X15",
+              "display": "2015 Peterbilt 579 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2015|Peterbilt|579|PACCAR MX-11",
+              "display": "2015 Peterbilt 579 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2015|Peterbilt|579|PACCAR MX-13",
+              "display": "2015 Peterbilt 579 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Volvo": {
+        "VNL 760": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2015|Volvo|VNL 760|Volvo D11",
+              "display": "2015 Volvo VNL 760 Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2015|Volvo|VNL 760|Volvo D13",
+              "display": "2015 Volvo VNL 760 Volvo D13"
+            }
+          }
+        },
+        "VHD": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2015|Volvo|VHD|Volvo D11",
+              "display": "2015 Volvo VHD Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2015|Volvo|VHD|Volvo D13",
+              "display": "2015 Volvo VHD Volvo D13"
+            }
+          }
+        }
+      },
+      "Freightliner": {
+        "Coronado": {
+          "engines": {
+            "DD13": {
+              "key": "2015|Freightliner|Coronado|DD13",
+              "display": "2015 Freightliner Coronado DD13"
+            },
+            "DD15": {
+              "key": "2015|Freightliner|Coronado|DD15",
+              "display": "2015 Freightliner Coronado DD15"
+            }
+          }
+        },
+        "Cascadia": {
+          "engines": {
+            "DD13": {
+              "key": "2015|Freightliner|Cascadia|DD13",
+              "display": "2015 Freightliner Cascadia DD13"
+            },
+            "DD15": {
+              "key": "2015|Freightliner|Cascadia|DD15",
+              "display": "2015 Freightliner Cascadia DD15"
+            },
+            "DD16": {
+              "key": "2015|Freightliner|Cascadia|DD16",
+              "display": "2015 Freightliner Cascadia DD16"
+            }
+          }
+        },
+        "Columbia": {
+          "engines": {
+            "DD13": {
+              "key": "2015|Freightliner|Columbia|DD13",
+              "display": "2015 Freightliner Columbia DD13"
+            },
+            "MBE 4000": {
+              "key": "2015|Freightliner|Columbia|MBE 4000",
+              "display": "2015 Freightliner Columbia MBE 4000"
+            }
+          }
+        },
+        "M2 106": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2015|Freightliner|M2 106|Cummins B6.7",
+              "display": "2015 Freightliner M2 106 Cummins B6.7"
+            },
+            "DD8": {
+              "key": "2015|Freightliner|M2 106|DD8",
+              "display": "2015 Freightliner M2 106 DD8"
+            }
+          }
+        }
+      },
+      "Mack": {
+        "Pinnacle": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2015|Mack|Pinnacle|Mack MP7",
+              "display": "2015 Mack Pinnacle Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2015|Mack|Pinnacle|Mack MP8",
+              "display": "2015 Mack Pinnacle Mack MP8"
+            }
+          }
+        },
+        "Granite": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2015|Mack|Granite|Mack MP7",
+              "display": "2015 Mack Granite Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2015|Mack|Granite|Mack MP8",
+              "display": "2015 Mack Granite Mack MP8"
+            }
+          }
+        }
+      },
+      "Western Star": {
+        "4700": {
+          "engines": {
+            "DD13": {
+              "key": "2015|Western Star|4700|DD13",
+              "display": "2015 Western Star 4700 DD13"
+            },
+            "DD15": {
+              "key": "2015|Western Star|4700|DD15",
+              "display": "2015 Western Star 4700 DD15"
+            }
+          }
+        },
+        "5700XE": {
+          "engines": {
+            "DD13": {
+              "key": "2015|Western Star|5700XE|DD13",
+              "display": "2015 Western Star 5700XE DD13"
+            },
+            "DD15": {
+              "key": "2015|Western Star|5700XE|DD15",
+              "display": "2015 Western Star 5700XE DD15"
+            },
+            "DD16": {
+              "key": "2015|Western Star|5700XE|DD16",
+              "display": "2015 Western Star 5700XE DD16"
+            }
+          }
+        }
+      },
+      "International": {
+        "DuraStar": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2015|International|DuraStar|Cummins B6.7",
+              "display": "2015 International DuraStar Cummins B6.7"
+            },
+            "MaxxForce DT": {
+              "key": "2015|International|DuraStar|MaxxForce DT",
+              "display": "2015 International DuraStar MaxxForce DT"
+            }
+          }
+        },
+        "ProStar": {
+          "engines": {
+            "Cummins ISX15": {
+              "key": "2015|International|ProStar|Cummins ISX15",
+              "display": "2015 International ProStar Cummins ISX15"
+            },
+            "MaxxForce 13": {
+              "key": "2015|International|ProStar|MaxxForce 13",
+              "display": "2015 International ProStar MaxxForce 13"
+            }
+          }
+        }
+      }
+    },
+    "2016": {
+      "Freightliner": {
+        "Cascadia": {
+          "engines": {
+            "DD13": {
+              "key": "2016|Freightliner|Cascadia|DD13",
+              "display": "2016 Freightliner Cascadia DD13"
+            },
+            "DD15": {
+              "key": "2016|Freightliner|Cascadia|DD15",
+              "display": "2016 Freightliner Cascadia DD15"
+            },
+            "DD16": {
+              "key": "2016|Freightliner|Cascadia|DD16",
+              "display": "2016 Freightliner Cascadia DD16"
+            }
+          }
+        },
+        "Coronado": {
+          "engines": {
+            "DD13": {
+              "key": "2016|Freightliner|Coronado|DD13",
+              "display": "2016 Freightliner Coronado DD13"
+            },
+            "DD15": {
+              "key": "2016|Freightliner|Coronado|DD15",
+              "display": "2016 Freightliner Coronado DD15"
+            }
+          }
+        },
+        "Columbia": {
+          "engines": {
+            "DD13": {
+              "key": "2016|Freightliner|Columbia|DD13",
+              "display": "2016 Freightliner Columbia DD13"
+            },
+            "MBE 4000": {
+              "key": "2016|Freightliner|Columbia|MBE 4000",
+              "display": "2016 Freightliner Columbia MBE 4000"
+            }
+          }
+        },
+        "M2 106": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2016|Freightliner|M2 106|Cummins B6.7",
+              "display": "2016 Freightliner M2 106 Cummins B6.7"
+            },
+            "DD8": {
+              "key": "2016|Freightliner|M2 106|DD8",
+              "display": "2016 Freightliner M2 106 DD8"
+            }
+          }
+        }
+      },
+      "International": {
+        "ProStar": {
+          "engines": {
+            "Cummins ISX15": {
+              "key": "2016|International|ProStar|Cummins ISX15",
+              "display": "2016 International ProStar Cummins ISX15"
+            },
+            "MaxxForce 13": {
+              "key": "2016|International|ProStar|MaxxForce 13",
+              "display": "2016 International ProStar MaxxForce 13"
+            }
+          }
+        },
+        "DuraStar": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2016|International|DuraStar|Cummins B6.7",
+              "display": "2016 International DuraStar Cummins B6.7"
+            },
+            "MaxxForce DT": {
+              "key": "2016|International|DuraStar|MaxxForce DT",
+              "display": "2016 International DuraStar MaxxForce DT"
+            }
+          }
+        }
+      },
+      "Kenworth": {
+        "T680": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2016|Kenworth|T680|Cummins X15",
+              "display": "2016 Kenworth T680 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2016|Kenworth|T680|PACCAR MX-11",
+              "display": "2016 Kenworth T680 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2016|Kenworth|T680|PACCAR MX-13",
+              "display": "2016 Kenworth T680 PACCAR MX-13"
+            }
+          }
+        },
+        "T880": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2016|Kenworth|T880|Cummins X15",
+              "display": "2016 Kenworth T880 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2016|Kenworth|T880|PACCAR MX-13",
+              "display": "2016 Kenworth T880 PACCAR MX-13"
+            }
+          }
+        },
+        "W900": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2016|Kenworth|W900|Cummins X15",
+              "display": "2016 Kenworth W900 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2016|Kenworth|W900|PACCAR MX-13",
+              "display": "2016 Kenworth W900 PACCAR MX-13"
+            }
+          }
+        },
+        "T270": {
+          "engines": {
+            "PACCAR PX-7": {
+              "key": "2016|Kenworth|T270|PACCAR PX-7",
+              "display": "2016 Kenworth T270 PACCAR PX-7"
+            }
+          }
+        }
+      },
+      "Mack": {
+        "Pinnacle": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2016|Mack|Pinnacle|Mack MP7",
+              "display": "2016 Mack Pinnacle Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2016|Mack|Pinnacle|Mack MP8",
+              "display": "2016 Mack Pinnacle Mack MP8"
+            }
+          }
+        },
+        "Granite": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2016|Mack|Granite|Mack MP7",
+              "display": "2016 Mack Granite Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2016|Mack|Granite|Mack MP8",
+              "display": "2016 Mack Granite Mack MP8"
+            }
+          }
+        }
+      },
+      "Peterbilt": {
+        "220": {
+          "engines": {
+            "PACCAR PX-7": {
+              "key": "2016|Peterbilt|220|PACCAR PX-7",
+              "display": "2016 Peterbilt 220 PACCAR PX-7"
+            }
+          }
+        },
+        "389": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2016|Peterbilt|389|Cummins X15",
+              "display": "2016 Peterbilt 389 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2016|Peterbilt|389|PACCAR MX-13",
+              "display": "2016 Peterbilt 389 PACCAR MX-13"
+            }
+          }
+        },
+        "567": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2016|Peterbilt|567|Cummins X15",
+              "display": "2016 Peterbilt 567 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2016|Peterbilt|567|PACCAR MX-13",
+              "display": "2016 Peterbilt 567 PACCAR MX-13"
+            }
+          }
+        },
+        "579": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2016|Peterbilt|579|Cummins X15",
+              "display": "2016 Peterbilt 579 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2016|Peterbilt|579|PACCAR MX-11",
+              "display": "2016 Peterbilt 579 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2016|Peterbilt|579|PACCAR MX-13",
+              "display": "2016 Peterbilt 579 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Volvo": {
+        "VNL 760": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2016|Volvo|VNL 760|Volvo D11",
+              "display": "2016 Volvo VNL 760 Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2016|Volvo|VNL 760|Volvo D13",
+              "display": "2016 Volvo VNL 760 Volvo D13"
+            }
+          }
+        },
+        "VHD": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2016|Volvo|VHD|Volvo D11",
+              "display": "2016 Volvo VHD Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2016|Volvo|VHD|Volvo D13",
+              "display": "2016 Volvo VHD Volvo D13"
+            }
+          }
+        }
+      },
+      "Western Star": {
+        "4700": {
+          "engines": {
+            "DD13": {
+              "key": "2016|Western Star|4700|DD13",
+              "display": "2016 Western Star 4700 DD13"
+            },
+            "DD15": {
+              "key": "2016|Western Star|4700|DD15",
+              "display": "2016 Western Star 4700 DD15"
+            }
+          }
+        },
+        "5700XE": {
+          "engines": {
+            "DD13": {
+              "key": "2016|Western Star|5700XE|DD13",
+              "display": "2016 Western Star 5700XE DD13"
+            },
+            "DD15": {
+              "key": "2016|Western Star|5700XE|DD15",
+              "display": "2016 Western Star 5700XE DD15"
+            },
+            "DD16": {
+              "key": "2016|Western Star|5700XE|DD16",
+              "display": "2016 Western Star 5700XE DD16"
+            }
+          }
+        }
+      }
+    },
+    "2017": {
+      "Freightliner": {
+        "Cascadia": {
+          "engines": {
+            "DD13": {
+              "key": "2017|Freightliner|Cascadia|DD13",
+              "display": "2017 Freightliner Cascadia DD13"
+            },
+            "DD15": {
+              "key": "2017|Freightliner|Cascadia|DD15",
+              "display": "2017 Freightliner Cascadia DD15"
+            },
+            "DD16": {
+              "key": "2017|Freightliner|Cascadia|DD16",
+              "display": "2017 Freightliner Cascadia DD16"
+            }
+          }
+        },
+        "Coronado": {
+          "engines": {
+            "DD13": {
+              "key": "2017|Freightliner|Coronado|DD13",
+              "display": "2017 Freightliner Coronado DD13"
+            },
+            "DD15": {
+              "key": "2017|Freightliner|Coronado|DD15",
+              "display": "2017 Freightliner Coronado DD15"
+            }
+          }
+        },
+        "M2 106": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2017|Freightliner|M2 106|Cummins B6.7",
+              "display": "2017 Freightliner M2 106 Cummins B6.7"
+            },
+            "DD8": {
+              "key": "2017|Freightliner|M2 106|DD8",
+              "display": "2017 Freightliner M2 106 DD8"
+            }
+          }
+        }
+      },
+      "International": {
+        "ProStar": {
+          "engines": {
+            "Cummins ISX15": {
+              "key": "2017|International|ProStar|Cummins ISX15",
+              "display": "2017 International ProStar Cummins ISX15"
+            },
+            "MaxxForce 13": {
+              "key": "2017|International|ProStar|MaxxForce 13",
+              "display": "2017 International ProStar MaxxForce 13"
+            }
+          }
+        },
+        "DuraStar": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2017|International|DuraStar|Cummins B6.7",
+              "display": "2017 International DuraStar Cummins B6.7"
+            },
+            "MaxxForce DT": {
+              "key": "2017|International|DuraStar|MaxxForce DT",
+              "display": "2017 International DuraStar MaxxForce DT"
+            }
+          }
+        }
+      },
+      "Kenworth": {
+        "T680": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2017|Kenworth|T680|Cummins X15",
+              "display": "2017 Kenworth T680 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2017|Kenworth|T680|PACCAR MX-11",
+              "display": "2017 Kenworth T680 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2017|Kenworth|T680|PACCAR MX-13",
+              "display": "2017 Kenworth T680 PACCAR MX-13"
+            }
+          }
+        },
+        "T880": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2017|Kenworth|T880|Cummins X15",
+              "display": "2017 Kenworth T880 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2017|Kenworth|T880|PACCAR MX-13",
+              "display": "2017 Kenworth T880 PACCAR MX-13"
+            }
+          }
+        },
+        "W900": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2017|Kenworth|W900|Cummins X15",
+              "display": "2017 Kenworth W900 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2017|Kenworth|W900|PACCAR MX-13",
+              "display": "2017 Kenworth W900 PACCAR MX-13"
+            }
+          }
+        },
+        "T270": {
+          "engines": {
+            "PACCAR PX-7": {
+              "key": "2017|Kenworth|T270|PACCAR PX-7",
+              "display": "2017 Kenworth T270 PACCAR PX-7"
+            }
+          }
+        }
+      },
+      "Mack": {
+        "Pinnacle": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2017|Mack|Pinnacle|Mack MP7",
+              "display": "2017 Mack Pinnacle Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2017|Mack|Pinnacle|Mack MP8",
+              "display": "2017 Mack Pinnacle Mack MP8"
+            }
+          }
+        },
+        "Granite": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2017|Mack|Granite|Mack MP7",
+              "display": "2017 Mack Granite Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2017|Mack|Granite|Mack MP8",
+              "display": "2017 Mack Granite Mack MP8"
+            }
+          }
+        }
+      },
+      "Peterbilt": {
+        "220": {
+          "engines": {
+            "PACCAR PX-7": {
+              "key": "2017|Peterbilt|220|PACCAR PX-7",
+              "display": "2017 Peterbilt 220 PACCAR PX-7"
+            }
+          }
+        },
+        "389": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2017|Peterbilt|389|Cummins X15",
+              "display": "2017 Peterbilt 389 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2017|Peterbilt|389|PACCAR MX-13",
+              "display": "2017 Peterbilt 389 PACCAR MX-13"
+            }
+          }
+        },
+        "567": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2017|Peterbilt|567|Cummins X15",
+              "display": "2017 Peterbilt 567 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2017|Peterbilt|567|PACCAR MX-13",
+              "display": "2017 Peterbilt 567 PACCAR MX-13"
+            }
+          }
+        },
+        "579": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2017|Peterbilt|579|Cummins X15",
+              "display": "2017 Peterbilt 579 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2017|Peterbilt|579|PACCAR MX-11",
+              "display": "2017 Peterbilt 579 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2017|Peterbilt|579|PACCAR MX-13",
+              "display": "2017 Peterbilt 579 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Volvo": {
+        "VNL 760": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2017|Volvo|VNL 760|Volvo D11",
+              "display": "2017 Volvo VNL 760 Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2017|Volvo|VNL 760|Volvo D13",
+              "display": "2017 Volvo VNL 760 Volvo D13"
+            }
+          }
+        },
+        "VNL 860": {
+          "engines": {
+            "Volvo D13": {
+              "key": "2017|Volvo|VNL 860|Volvo D13",
+              "display": "2017 Volvo VNL 860 Volvo D13"
+            }
+          }
+        },
+        "VHD": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2017|Volvo|VHD|Volvo D11",
+              "display": "2017 Volvo VHD Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2017|Volvo|VHD|Volvo D13",
+              "display": "2017 Volvo VHD Volvo D13"
+            }
+          }
+        }
+      },
+      "Western Star": {
+        "4700": {
+          "engines": {
+            "DD13": {
+              "key": "2017|Western Star|4700|DD13",
+              "display": "2017 Western Star 4700 DD13"
+            },
+            "DD15": {
+              "key": "2017|Western Star|4700|DD15",
+              "display": "2017 Western Star 4700 DD15"
+            }
+          }
+        },
+        "5700XE": {
+          "engines": {
+            "DD13": {
+              "key": "2017|Western Star|5700XE|DD13",
+              "display": "2017 Western Star 5700XE DD13"
+            },
+            "DD15": {
+              "key": "2017|Western Star|5700XE|DD15",
+              "display": "2017 Western Star 5700XE DD15"
+            },
+            "DD16": {
+              "key": "2017|Western Star|5700XE|DD16",
+              "display": "2017 Western Star 5700XE DD16"
+            }
+          }
+        }
+      }
+    },
+    "2018": {
+      "Freightliner": {
+        "Cascadia": {
+          "engines": {
+            "DD13": {
+              "key": "2018|Freightliner|Cascadia|DD13",
+              "display": "2018 Freightliner Cascadia DD13"
+            },
+            "DD15": {
+              "key": "2018|Freightliner|Cascadia|DD15",
+              "display": "2018 Freightliner Cascadia DD15"
+            },
+            "DD16": {
+              "key": "2018|Freightliner|Cascadia|DD16",
+              "display": "2018 Freightliner Cascadia DD16"
+            }
+          }
+        },
+        "Coronado": {
+          "engines": {
+            "DD13": {
+              "key": "2018|Freightliner|Coronado|DD13",
+              "display": "2018 Freightliner Coronado DD13"
+            },
+            "DD15": {
+              "key": "2018|Freightliner|Coronado|DD15",
+              "display": "2018 Freightliner Coronado DD15"
+            }
+          }
+        },
+        "M2 106": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2018|Freightliner|M2 106|Cummins B6.7",
+              "display": "2018 Freightliner M2 106 Cummins B6.7"
+            },
+            "DD8": {
+              "key": "2018|Freightliner|M2 106|DD8",
+              "display": "2018 Freightliner M2 106 DD8"
+            }
+          }
+        }
+      },
+      "International": {
+        "LT": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2018|International|LT|Cummins X15",
+              "display": "2018 International LT Cummins X15"
+            },
+            "N13": {
+              "key": "2018|International|LT|N13",
+              "display": "2018 International LT N13"
+            }
+          }
+        },
+        "DuraStar": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2018|International|DuraStar|Cummins B6.7",
+              "display": "2018 International DuraStar Cummins B6.7"
+            },
+            "MaxxForce DT": {
+              "key": "2018|International|DuraStar|MaxxForce DT",
+              "display": "2018 International DuraStar MaxxForce DT"
+            }
+          }
+        }
+      },
+      "Kenworth": {
+        "T680": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2018|Kenworth|T680|Cummins X15",
+              "display": "2018 Kenworth T680 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2018|Kenworth|T680|PACCAR MX-11",
+              "display": "2018 Kenworth T680 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2018|Kenworth|T680|PACCAR MX-13",
+              "display": "2018 Kenworth T680 PACCAR MX-13"
+            }
+          }
+        },
+        "T880": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2018|Kenworth|T880|Cummins X15",
+              "display": "2018 Kenworth T880 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2018|Kenworth|T880|PACCAR MX-13",
+              "display": "2018 Kenworth T880 PACCAR MX-13"
+            }
+          }
+        },
+        "W900": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2018|Kenworth|W900|Cummins X15",
+              "display": "2018 Kenworth W900 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2018|Kenworth|W900|PACCAR MX-13",
+              "display": "2018 Kenworth W900 PACCAR MX-13"
+            }
+          }
+        },
+        "T270": {
+          "engines": {
+            "PACCAR PX-7": {
+              "key": "2018|Kenworth|T270|PACCAR PX-7",
+              "display": "2018 Kenworth T270 PACCAR PX-7"
+            }
+          }
+        }
+      },
+      "Mack": {
+        "Pinnacle": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2018|Mack|Pinnacle|Mack MP7",
+              "display": "2018 Mack Pinnacle Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2018|Mack|Pinnacle|Mack MP8",
+              "display": "2018 Mack Pinnacle Mack MP8"
+            }
+          }
+        },
+        "Anthem": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2018|Mack|Anthem|Mack MP7",
+              "display": "2018 Mack Anthem Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2018|Mack|Anthem|Mack MP8",
+              "display": "2018 Mack Anthem Mack MP8"
+            }
+          }
+        },
+        "Granite": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2018|Mack|Granite|Mack MP7",
+              "display": "2018 Mack Granite Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2018|Mack|Granite|Mack MP8",
+              "display": "2018 Mack Granite Mack MP8"
+            }
+          }
+        }
+      },
+      "Peterbilt": {
+        "220": {
+          "engines": {
+            "PACCAR PX-7": {
+              "key": "2018|Peterbilt|220|PACCAR PX-7",
+              "display": "2018 Peterbilt 220 PACCAR PX-7"
+            }
+          }
+        },
+        "389": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2018|Peterbilt|389|Cummins X15",
+              "display": "2018 Peterbilt 389 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2018|Peterbilt|389|PACCAR MX-13",
+              "display": "2018 Peterbilt 389 PACCAR MX-13"
+            }
+          }
+        },
+        "567": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2018|Peterbilt|567|Cummins X15",
+              "display": "2018 Peterbilt 567 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2018|Peterbilt|567|PACCAR MX-13",
+              "display": "2018 Peterbilt 567 PACCAR MX-13"
+            }
+          }
+        },
+        "579": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2018|Peterbilt|579|Cummins X15",
+              "display": "2018 Peterbilt 579 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2018|Peterbilt|579|PACCAR MX-11",
+              "display": "2018 Peterbilt 579 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2018|Peterbilt|579|PACCAR MX-13",
+              "display": "2018 Peterbilt 579 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Volvo": {
+        "VNL 760": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2018|Volvo|VNL 760|Volvo D11",
+              "display": "2018 Volvo VNL 760 Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2018|Volvo|VNL 760|Volvo D13",
+              "display": "2018 Volvo VNL 760 Volvo D13"
+            }
+          }
+        },
+        "VNL 860": {
+          "engines": {
+            "Volvo D13": {
+              "key": "2018|Volvo|VNL 860|Volvo D13",
+              "display": "2018 Volvo VNL 860 Volvo D13"
+            }
+          }
+        },
+        "VHD": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2018|Volvo|VHD|Volvo D11",
+              "display": "2018 Volvo VHD Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2018|Volvo|VHD|Volvo D13",
+              "display": "2018 Volvo VHD Volvo D13"
+            }
+          }
+        }
+      },
+      "Western Star": {
+        "4700": {
+          "engines": {
+            "DD13": {
+              "key": "2018|Western Star|4700|DD13",
+              "display": "2018 Western Star 4700 DD13"
+            },
+            "DD15": {
+              "key": "2018|Western Star|4700|DD15",
+              "display": "2018 Western Star 4700 DD15"
+            }
+          }
+        },
+        "5700XE": {
+          "engines": {
+            "DD13": {
+              "key": "2018|Western Star|5700XE|DD13",
+              "display": "2018 Western Star 5700XE DD13"
+            },
+            "DD15": {
+              "key": "2018|Western Star|5700XE|DD15",
+              "display": "2018 Western Star 5700XE DD15"
+            },
+            "DD16": {
+              "key": "2018|Western Star|5700XE|DD16",
+              "display": "2018 Western Star 5700XE DD16"
+            }
+          }
+        }
+      }
+    },
+    "2019": {
+      "Freightliner": {
+        "Cascadia": {
+          "engines": {
+            "DD13": {
+              "key": "2019|Freightliner|Cascadia|DD13",
+              "display": "2019 Freightliner Cascadia DD13"
+            },
+            "DD15": {
+              "key": "2019|Freightliner|Cascadia|DD15",
+              "display": "2019 Freightliner Cascadia DD15"
+            },
+            "DD16": {
+              "key": "2019|Freightliner|Cascadia|DD16",
+              "display": "2019 Freightliner Cascadia DD16"
+            }
+          }
+        },
+        "Coronado": {
+          "engines": {
+            "DD13": {
+              "key": "2019|Freightliner|Coronado|DD13",
+              "display": "2019 Freightliner Coronado DD13"
+            },
+            "DD15": {
+              "key": "2019|Freightliner|Coronado|DD15",
+              "display": "2019 Freightliner Coronado DD15"
+            }
+          }
+        },
+        "M2 106": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2019|Freightliner|M2 106|Cummins B6.7",
+              "display": "2019 Freightliner M2 106 Cummins B6.7"
+            },
+            "DD8": {
+              "key": "2019|Freightliner|M2 106|DD8",
+              "display": "2019 Freightliner M2 106 DD8"
+            }
+          }
+        }
+      },
+      "International": {
+        "LT": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2019|International|LT|Cummins X15",
+              "display": "2019 International LT Cummins X15"
+            },
+            "N13": {
+              "key": "2019|International|LT|N13",
+              "display": "2019 International LT N13"
+            }
+          }
+        },
+        "DuraStar": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2019|International|DuraStar|Cummins B6.7",
+              "display": "2019 International DuraStar Cummins B6.7"
+            },
+            "MaxxForce DT": {
+              "key": "2019|International|DuraStar|MaxxForce DT",
+              "display": "2019 International DuraStar MaxxForce DT"
+            }
+          }
+        }
+      },
+      "Kenworth": {
+        "T680": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2019|Kenworth|T680|Cummins X15",
+              "display": "2019 Kenworth T680 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2019|Kenworth|T680|PACCAR MX-11",
+              "display": "2019 Kenworth T680 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2019|Kenworth|T680|PACCAR MX-13",
+              "display": "2019 Kenworth T680 PACCAR MX-13"
+            }
+          }
+        },
+        "T880": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2019|Kenworth|T880|Cummins X15",
+              "display": "2019 Kenworth T880 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2019|Kenworth|T880|PACCAR MX-13",
+              "display": "2019 Kenworth T880 PACCAR MX-13"
+            }
+          }
+        },
+        "W900": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2019|Kenworth|W900|Cummins X15",
+              "display": "2019 Kenworth W900 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2019|Kenworth|W900|PACCAR MX-13",
+              "display": "2019 Kenworth W900 PACCAR MX-13"
+            }
+          }
+        },
+        "T270": {
+          "engines": {
+            "PACCAR PX-7": {
+              "key": "2019|Kenworth|T270|PACCAR PX-7",
+              "display": "2019 Kenworth T270 PACCAR PX-7"
+            }
+          }
+        }
+      },
+      "Mack": {
+        "Anthem": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2019|Mack|Anthem|Mack MP7",
+              "display": "2019 Mack Anthem Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2019|Mack|Anthem|Mack MP8",
+              "display": "2019 Mack Anthem Mack MP8"
+            }
+          }
+        },
+        "Pinnacle": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2019|Mack|Pinnacle|Mack MP7",
+              "display": "2019 Mack Pinnacle Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2019|Mack|Pinnacle|Mack MP8",
+              "display": "2019 Mack Pinnacle Mack MP8"
+            }
+          }
+        },
+        "Granite": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2019|Mack|Granite|Mack MP7",
+              "display": "2019 Mack Granite Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2019|Mack|Granite|Mack MP8",
+              "display": "2019 Mack Granite Mack MP8"
+            }
+          }
+        }
+      },
+      "Peterbilt": {
+        "220": {
+          "engines": {
+            "PACCAR PX-7": {
+              "key": "2019|Peterbilt|220|PACCAR PX-7",
+              "display": "2019 Peterbilt 220 PACCAR PX-7"
+            }
+          }
+        },
+        "389": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2019|Peterbilt|389|Cummins X15",
+              "display": "2019 Peterbilt 389 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2019|Peterbilt|389|PACCAR MX-13",
+              "display": "2019 Peterbilt 389 PACCAR MX-13"
+            }
+          }
+        },
+        "567": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2019|Peterbilt|567|Cummins X15",
+              "display": "2019 Peterbilt 567 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2019|Peterbilt|567|PACCAR MX-13",
+              "display": "2019 Peterbilt 567 PACCAR MX-13"
+            }
+          }
+        },
+        "579": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2019|Peterbilt|579|Cummins X15",
+              "display": "2019 Peterbilt 579 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2019|Peterbilt|579|PACCAR MX-11",
+              "display": "2019 Peterbilt 579 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2019|Peterbilt|579|PACCAR MX-13",
+              "display": "2019 Peterbilt 579 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Volvo": {
+        "VNL 760": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2019|Volvo|VNL 760|Volvo D11",
+              "display": "2019 Volvo VNL 760 Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2019|Volvo|VNL 760|Volvo D13",
+              "display": "2019 Volvo VNL 760 Volvo D13"
+            }
+          }
+        },
+        "VNL 860": {
+          "engines": {
+            "Volvo D13": {
+              "key": "2019|Volvo|VNL 860|Volvo D13",
+              "display": "2019 Volvo VNL 860 Volvo D13"
+            }
+          }
+        },
+        "VHD": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2019|Volvo|VHD|Volvo D11",
+              "display": "2019 Volvo VHD Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2019|Volvo|VHD|Volvo D13",
+              "display": "2019 Volvo VHD Volvo D13"
+            }
+          }
+        }
+      },
+      "Western Star": {
+        "4700": {
+          "engines": {
+            "DD13": {
+              "key": "2019|Western Star|4700|DD13",
+              "display": "2019 Western Star 4700 DD13"
+            },
+            "DD15": {
+              "key": "2019|Western Star|4700|DD15",
+              "display": "2019 Western Star 4700 DD15"
+            }
+          }
+        },
+        "5700XE": {
+          "engines": {
+            "DD13": {
+              "key": "2019|Western Star|5700XE|DD13",
+              "display": "2019 Western Star 5700XE DD13"
+            },
+            "DD15": {
+              "key": "2019|Western Star|5700XE|DD15",
+              "display": "2019 Western Star 5700XE DD15"
+            },
+            "DD16": {
+              "key": "2019|Western Star|5700XE|DD16",
+              "display": "2019 Western Star 5700XE DD16"
+            }
+          }
+        }
+      }
+    },
+    "2020": {
+      "Freightliner": {
+        "Cascadia": {
+          "engines": {
+            "DD13": {
+              "key": "2020|Freightliner|Cascadia|DD13",
+              "display": "2020 Freightliner Cascadia DD13"
+            },
+            "DD15": {
+              "key": "2020|Freightliner|Cascadia|DD15",
+              "display": "2020 Freightliner Cascadia DD15"
+            },
+            "DD16": {
+              "key": "2020|Freightliner|Cascadia|DD16",
+              "display": "2020 Freightliner Cascadia DD16"
+            }
+          }
+        },
+        "M2 106": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2020|Freightliner|M2 106|Cummins B6.7",
+              "display": "2020 Freightliner M2 106 Cummins B6.7"
+            },
+            "DD8": {
+              "key": "2020|Freightliner|M2 106|DD8",
+              "display": "2020 Freightliner M2 106 DD8"
+            }
+          }
+        }
+      },
+      "International": {
+        "LT": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2020|International|LT|Cummins X15",
+              "display": "2020 International LT Cummins X15"
+            },
+            "N13": {
+              "key": "2020|International|LT|N13",
+              "display": "2020 International LT N13"
+            }
+          }
+        }
+      },
+      "Kenworth": {
+        "T680": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2020|Kenworth|T680|Cummins X15",
+              "display": "2020 Kenworth T680 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2020|Kenworth|T680|PACCAR MX-11",
+              "display": "2020 Kenworth T680 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2020|Kenworth|T680|PACCAR MX-13",
+              "display": "2020 Kenworth T680 PACCAR MX-13"
+            }
+          }
+        },
+        "T880": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2020|Kenworth|T880|Cummins X15",
+              "display": "2020 Kenworth T880 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2020|Kenworth|T880|PACCAR MX-13",
+              "display": "2020 Kenworth T880 PACCAR MX-13"
+            }
+          }
+        },
+        "W900": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2020|Kenworth|W900|Cummins X15",
+              "display": "2020 Kenworth W900 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2020|Kenworth|W900|PACCAR MX-13",
+              "display": "2020 Kenworth W900 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Mack": {
+        "Anthem": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2020|Mack|Anthem|Mack MP7",
+              "display": "2020 Mack Anthem Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2020|Mack|Anthem|Mack MP8",
+              "display": "2020 Mack Anthem Mack MP8"
+            }
+          }
+        },
+        "Granite": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2020|Mack|Granite|Mack MP7",
+              "display": "2020 Mack Granite Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2020|Mack|Granite|Mack MP8",
+              "display": "2020 Mack Granite Mack MP8"
+            }
+          }
+        }
+      },
+      "Peterbilt": {
+        "389": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2020|Peterbilt|389|Cummins X15",
+              "display": "2020 Peterbilt 389 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2020|Peterbilt|389|PACCAR MX-13",
+              "display": "2020 Peterbilt 389 PACCAR MX-13"
+            }
+          }
+        },
+        "567": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2020|Peterbilt|567|Cummins X15",
+              "display": "2020 Peterbilt 567 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2020|Peterbilt|567|PACCAR MX-13",
+              "display": "2020 Peterbilt 567 PACCAR MX-13"
+            }
+          }
+        },
+        "579": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2020|Peterbilt|579|Cummins X15",
+              "display": "2020 Peterbilt 579 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2020|Peterbilt|579|PACCAR MX-11",
+              "display": "2020 Peterbilt 579 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2020|Peterbilt|579|PACCAR MX-13",
+              "display": "2020 Peterbilt 579 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Volvo": {
+        "VNL 760": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2020|Volvo|VNL 760|Volvo D11",
+              "display": "2020 Volvo VNL 760 Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2020|Volvo|VNL 760|Volvo D13",
+              "display": "2020 Volvo VNL 760 Volvo D13"
+            }
+          }
+        },
+        "VNL 860": {
+          "engines": {
+            "Volvo D13": {
+              "key": "2020|Volvo|VNL 860|Volvo D13",
+              "display": "2020 Volvo VNL 860 Volvo D13"
+            }
+          }
+        }
+      },
+      "Western Star": {
+        "4700": {
+          "engines": {
+            "DD13": {
+              "key": "2020|Western Star|4700|DD13",
+              "display": "2020 Western Star 4700 DD13"
+            },
+            "DD15": {
+              "key": "2020|Western Star|4700|DD15",
+              "display": "2020 Western Star 4700 DD15"
+            }
+          }
+        },
+        "5700XE": {
+          "engines": {
+            "DD13": {
+              "key": "2020|Western Star|5700XE|DD13",
+              "display": "2020 Western Star 5700XE DD13"
+            },
+            "DD15": {
+              "key": "2020|Western Star|5700XE|DD15",
+              "display": "2020 Western Star 5700XE DD15"
+            },
+            "DD16": {
+              "key": "2020|Western Star|5700XE|DD16",
+              "display": "2020 Western Star 5700XE DD16"
+            }
+          }
+        }
+      }
+    },
+    "2021": {
+      "Freightliner": {
+        "Cascadia": {
+          "engines": {
+            "DD13": {
+              "key": "2021|Freightliner|Cascadia|DD13",
+              "display": "2021 Freightliner Cascadia DD13"
+            },
+            "DD15": {
+              "key": "2021|Freightliner|Cascadia|DD15",
+              "display": "2021 Freightliner Cascadia DD15"
+            },
+            "DD16": {
+              "key": "2021|Freightliner|Cascadia|DD16",
+              "display": "2021 Freightliner Cascadia DD16"
+            }
+          }
+        },
+        "M2 106": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2021|Freightliner|M2 106|Cummins B6.7",
+              "display": "2021 Freightliner M2 106 Cummins B6.7"
+            },
+            "DD8": {
+              "key": "2021|Freightliner|M2 106|DD8",
+              "display": "2021 Freightliner M2 106 DD8"
+            }
+          }
+        }
+      },
+      "International": {
+        "LT": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2021|International|LT|Cummins X15",
+              "display": "2021 International LT Cummins X15"
+            },
+            "N13": {
+              "key": "2021|International|LT|N13",
+              "display": "2021 International LT N13"
+            }
+          }
+        }
+      },
+      "Kenworth": {
+        "T680": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2021|Kenworth|T680|Cummins X15",
+              "display": "2021 Kenworth T680 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2021|Kenworth|T680|PACCAR MX-11",
+              "display": "2021 Kenworth T680 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2021|Kenworth|T680|PACCAR MX-13",
+              "display": "2021 Kenworth T680 PACCAR MX-13"
+            }
+          }
+        },
+        "T880": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2021|Kenworth|T880|Cummins X15",
+              "display": "2021 Kenworth T880 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2021|Kenworth|T880|PACCAR MX-13",
+              "display": "2021 Kenworth T880 PACCAR MX-13"
+            }
+          }
+        },
+        "W900": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2021|Kenworth|W900|Cummins X15",
+              "display": "2021 Kenworth W900 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2021|Kenworth|W900|PACCAR MX-13",
+              "display": "2021 Kenworth W900 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Mack": {
+        "Anthem": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2021|Mack|Anthem|Mack MP7",
+              "display": "2021 Mack Anthem Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2021|Mack|Anthem|Mack MP8",
+              "display": "2021 Mack Anthem Mack MP8"
+            }
+          }
+        },
+        "Granite": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2021|Mack|Granite|Mack MP7",
+              "display": "2021 Mack Granite Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2021|Mack|Granite|Mack MP8",
+              "display": "2021 Mack Granite Mack MP8"
+            }
+          }
+        }
+      },
+      "Peterbilt": {
+        "389": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2021|Peterbilt|389|Cummins X15",
+              "display": "2021 Peterbilt 389 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2021|Peterbilt|389|PACCAR MX-13",
+              "display": "2021 Peterbilt 389 PACCAR MX-13"
+            }
+          }
+        },
+        "567": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2021|Peterbilt|567|Cummins X15",
+              "display": "2021 Peterbilt 567 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2021|Peterbilt|567|PACCAR MX-13",
+              "display": "2021 Peterbilt 567 PACCAR MX-13"
+            }
+          }
+        },
+        "579": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2021|Peterbilt|579|Cummins X15",
+              "display": "2021 Peterbilt 579 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2021|Peterbilt|579|PACCAR MX-11",
+              "display": "2021 Peterbilt 579 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2021|Peterbilt|579|PACCAR MX-13",
+              "display": "2021 Peterbilt 579 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Volvo": {
+        "VNL 760": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2021|Volvo|VNL 760|Volvo D11",
+              "display": "2021 Volvo VNL 760 Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2021|Volvo|VNL 760|Volvo D13",
+              "display": "2021 Volvo VNL 760 Volvo D13"
+            }
+          }
+        },
+        "VNL 860": {
+          "engines": {
+            "Volvo D13": {
+              "key": "2021|Volvo|VNL 860|Volvo D13",
+              "display": "2021 Volvo VNL 860 Volvo D13"
+            }
+          }
+        }
+      },
+      "Western Star": {
+        "5700XE": {
+          "engines": {
+            "DD13": {
+              "key": "2021|Western Star|5700XE|DD13",
+              "display": "2021 Western Star 5700XE DD13"
+            },
+            "DD15": {
+              "key": "2021|Western Star|5700XE|DD15",
+              "display": "2021 Western Star 5700XE DD15"
+            },
+            "DD16": {
+              "key": "2021|Western Star|5700XE|DD16",
+              "display": "2021 Western Star 5700XE DD16"
+            }
+          }
+        }
+      }
+    },
+    "2022": {
+      "Freightliner": {
+        "Cascadia": {
+          "engines": {
+            "DD13": {
+              "key": "2022|Freightliner|Cascadia|DD13",
+              "display": "2022 Freightliner Cascadia DD13"
+            },
+            "DD15": {
+              "key": "2022|Freightliner|Cascadia|DD15",
+              "display": "2022 Freightliner Cascadia DD15"
+            },
+            "DD16": {
+              "key": "2022|Freightliner|Cascadia|DD16",
+              "display": "2022 Freightliner Cascadia DD16"
+            }
+          }
+        },
+        "M2 106": {
+          "engines": {
+            "Cummins B6.7": {
+              "key": "2022|Freightliner|M2 106|Cummins B6.7",
+              "display": "2022 Freightliner M2 106 Cummins B6.7"
+            },
+            "DD8": {
+              "key": "2022|Freightliner|M2 106|DD8",
+              "display": "2022 Freightliner M2 106 DD8"
+            }
+          }
+        }
+      },
+      "International": {
+        "LT": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2022|International|LT|Cummins X15",
+              "display": "2022 International LT Cummins X15"
+            },
+            "N13": {
+              "key": "2022|International|LT|N13",
+              "display": "2022 International LT N13"
+            }
+          }
+        }
+      },
+      "Kenworth": {
+        "T680": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2022|Kenworth|T680|Cummins X15",
+              "display": "2022 Kenworth T680 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2022|Kenworth|T680|PACCAR MX-11",
+              "display": "2022 Kenworth T680 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2022|Kenworth|T680|PACCAR MX-13",
+              "display": "2022 Kenworth T680 PACCAR MX-13"
+            }
+          }
+        },
+        "W900": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2022|Kenworth|W900|Cummins X15",
+              "display": "2022 Kenworth W900 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2022|Kenworth|W900|PACCAR MX-13",
+              "display": "2022 Kenworth W900 PACCAR MX-13"
+            }
+          }
+        },
+        "T880": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2022|Kenworth|T880|Cummins X15",
+              "display": "2022 Kenworth T880 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2022|Kenworth|T880|PACCAR MX-13",
+              "display": "2022 Kenworth T880 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Mack": {
+        "Anthem": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2022|Mack|Anthem|Mack MP7",
+              "display": "2022 Mack Anthem Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2022|Mack|Anthem|Mack MP8",
+              "display": "2022 Mack Anthem Mack MP8"
+            }
+          }
+        },
+        "Granite": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2022|Mack|Granite|Mack MP7",
+              "display": "2022 Mack Granite Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2022|Mack|Granite|Mack MP8",
+              "display": "2022 Mack Granite Mack MP8"
+            }
+          }
+        }
+      },
+      "Peterbilt": {
+        "389": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2022|Peterbilt|389|Cummins X15",
+              "display": "2022 Peterbilt 389 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2022|Peterbilt|389|PACCAR MX-13",
+              "display": "2022 Peterbilt 389 PACCAR MX-13"
+            }
+          }
+        },
+        "567": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2022|Peterbilt|567|Cummins X15",
+              "display": "2022 Peterbilt 567 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2022|Peterbilt|567|PACCAR MX-13",
+              "display": "2022 Peterbilt 567 PACCAR MX-13"
+            }
+          }
+        },
+        "579": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2022|Peterbilt|579|Cummins X15",
+              "display": "2022 Peterbilt 579 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2022|Peterbilt|579|PACCAR MX-11",
+              "display": "2022 Peterbilt 579 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2022|Peterbilt|579|PACCAR MX-13",
+              "display": "2022 Peterbilt 579 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Volvo": {
+        "VNL 760": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2022|Volvo|VNL 760|Volvo D11",
+              "display": "2022 Volvo VNL 760 Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2022|Volvo|VNL 760|Volvo D13",
+              "display": "2022 Volvo VNL 760 Volvo D13"
+            }
+          }
+        },
+        "VNL 860": {
+          "engines": {
+            "Volvo D13": {
+              "key": "2022|Volvo|VNL 860|Volvo D13",
+              "display": "2022 Volvo VNL 860 Volvo D13"
+            }
+          }
+        }
+      },
+      "Western Star": {
+        "5700XE": {
+          "engines": {
+            "DD13": {
+              "key": "2022|Western Star|5700XE|DD13",
+              "display": "2022 Western Star 5700XE DD13"
+            },
+            "DD15": {
+              "key": "2022|Western Star|5700XE|DD15",
+              "display": "2022 Western Star 5700XE DD15"
+            },
+            "DD16": {
+              "key": "2022|Western Star|5700XE|DD16",
+              "display": "2022 Western Star 5700XE DD16"
+            }
+          }
+        }
+      }
+    },
+    "2023": {
+      "Freightliner": {
+        "Cascadia": {
+          "engines": {
+            "DD13": {
+              "key": "2023|Freightliner|Cascadia|DD13",
+              "display": "2023 Freightliner Cascadia DD13"
+            },
+            "DD15": {
+              "key": "2023|Freightliner|Cascadia|DD15",
+              "display": "2023 Freightliner Cascadia DD15"
+            },
+            "DD16": {
+              "key": "2023|Freightliner|Cascadia|DD16",
+              "display": "2023 Freightliner Cascadia DD16"
+            }
+          }
+        }
+      },
+      "Volvo": {
+        "VNL 860": {
+          "engines": {
+            "Volvo D13": {
+              "key": "2023|Volvo|VNL 860|Volvo D13",
+              "display": "2023 Volvo VNL 860 Volvo D13"
+            }
+          }
+        },
+        "VNL 760": {
+          "engines": {
+            "Volvo D11": {
+              "key": "2023|Volvo|VNL 760|Volvo D11",
+              "display": "2023 Volvo VNL 760 Volvo D11"
+            },
+            "Volvo D13": {
+              "key": "2023|Volvo|VNL 760|Volvo D13",
+              "display": "2023 Volvo VNL 760 Volvo D13"
+            }
+          }
+        }
+      },
+      "Western Star": {
+        "5700XE": {
+          "engines": {
+            "DD13": {
+              "key": "2023|Western Star|5700XE|DD13",
+              "display": "2023 Western Star 5700XE DD13"
+            },
+            "DD15": {
+              "key": "2023|Western Star|5700XE|DD15",
+              "display": "2023 Western Star 5700XE DD15"
+            },
+            "DD16": {
+              "key": "2023|Western Star|5700XE|DD16",
+              "display": "2023 Western Star 5700XE DD16"
+            }
+          }
+        }
+      },
+      "Kenworth": {
+        "T680": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2023|Kenworth|T680|Cummins X15",
+              "display": "2023 Kenworth T680 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2023|Kenworth|T680|PACCAR MX-11",
+              "display": "2023 Kenworth T680 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2023|Kenworth|T680|PACCAR MX-13",
+              "display": "2023 Kenworth T680 PACCAR MX-13"
+            }
+          }
+        },
+        "W900": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2023|Kenworth|W900|Cummins X15",
+              "display": "2023 Kenworth W900 Cummins X15"
+            },
+            "PACCAR MX-13": {
+              "key": "2023|Kenworth|W900|PACCAR MX-13",
+              "display": "2023 Kenworth W900 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Peterbilt": {
+        "579": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2023|Peterbilt|579|Cummins X15",
+              "display": "2023 Peterbilt 579 Cummins X15"
+            },
+            "PACCAR MX-11": {
+              "key": "2023|Peterbilt|579|PACCAR MX-11",
+              "display": "2023 Peterbilt 579 PACCAR MX-11"
+            },
+            "PACCAR MX-13": {
+              "key": "2023|Peterbilt|579|PACCAR MX-13",
+              "display": "2023 Peterbilt 579 PACCAR MX-13"
+            }
+          }
+        }
+      },
+      "Mack": {
+        "Granite": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2023|Mack|Granite|Mack MP7",
+              "display": "2023 Mack Granite Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2023|Mack|Granite|Mack MP8",
+              "display": "2023 Mack Granite Mack MP8"
+            }
+          }
+        },
+        "Anthem": {
+          "engines": {
+            "Mack MP7": {
+              "key": "2023|Mack|Anthem|Mack MP7",
+              "display": "2023 Mack Anthem Mack MP7"
+            },
+            "Mack MP8": {
+              "key": "2023|Mack|Anthem|Mack MP8",
+              "display": "2023 Mack Anthem Mack MP8"
+            }
+          }
+        }
+      },
+      "International": {
+        "LT": {
+          "engines": {
+            "Cummins X15": {
+              "key": "2023|International|LT|Cummins X15",
+              "display": "2023 International LT Cummins X15"
+            },
+            "N13": {
+              "key": "2023|International|LT|N13",
+              "display": "2023 International LT N13"
+            }
+          }
+        }
+      }
+    }
+  }
+}

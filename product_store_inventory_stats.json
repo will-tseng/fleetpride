@@ -1,0 +1,27 @@
+{
+  "_comment": "Store inventory statistics",
+  "_generated_at": "2026-02-10T19:38:21.163Z",
+  "_stats": {
+    "total_products": 810,
+    "stores": {
+      "Chicago": {
+        "products_available": 604,
+        "availability_percent": "74.6",
+        "total_inventory": 16698,
+        "avg_inventory_per_product": "27.6"
+      },
+      "San Francisco": {
+        "products_available": 523,
+        "availability_percent": "64.6",
+        "total_inventory": 10126,
+        "avg_inventory_per_product": "19.4"
+      },
+      "Raleigh": {
+        "products_available": 451,
+        "availability_percent": "55.7",
+        "total_inventory": 5987,
+        "avg_inventory_per_product": "13.3"
+      }
+    }
+  }
+}
